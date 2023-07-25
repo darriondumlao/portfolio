@@ -1,19 +1,20 @@
-import AboutMe from '@/components/AboutMe'
-import Interests from '@/components/Interests'
-import AppRebuilds from '@/components/projects/AppRebuilds'
-import Contribution from '@/components/projects/Contribution'
-import GitProjects from '@/components/projects/GitProjects'
+import ProjectCard from '@/components/ProjectCard'
 
-const Homepage = () => {
+import '@/styles/index.css'
+
+const Home = () => {
 	return (
-		<div className='middle-area'>
-			<AboutMe />
-			<AppRebuilds />
-			<Contribution />
-			<GitProjects />
-			<Interests />
-		</div>
+		<>
+			<h1 className='text-xl'>Now Playing</h1>
+			<div className='place-content-center'>
+				<div>
+					<ProjectCard />
+				</div>
+				{/* <AboutMe /> */}
+				<div className='text-2xl flex pt-10'></div>
+			</div>
+		</>
 	)
 }
 
-export default Homepage
+export default Home
