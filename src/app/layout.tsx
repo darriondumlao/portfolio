@@ -2,6 +2,7 @@ import Sidebar from '@/components/Sidebar'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import NowPlaying from '@/components/NowPlaying'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,12 +18,14 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang='en'>
-			<body className={inter.className}>
-				<div className='flex bg-canvas h-screen'>
-					<div className='min-h-0 flex-1 overflow:hidden w-[200px]'>
-						<Sidebar />
+			<body className={inter.className + ' bg-canvas'}>
+				<div className='flex  h-screen font-sans'>
+					<Sidebar />
+
+					<div className='w-[calc(100vw-260px)] h-full overflow-y-scroll relative font-sans'>
+						<NowPlaying />
+						<div className='pt-[150px] bg-zinc-800'>{children}</div>
 					</div>
-					<div className='w-[calc(100vw-200px)]'>{children} </div>
 				</div>
 			</body>
 		</html>

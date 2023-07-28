@@ -1,9 +1,11 @@
-import Link from 'next/link'
+'use client'
 
-const SidebarButton = ({ children }) => {
+const SidebarButton = ({ children, Icon }) => {
 	return (
-		<div className='flex items-center w-full px-[20px] py-[2px] rounded-md bg-sidebar active:bg-sidebar-active'>
-			<span className='w-[20px] mr-6px'>[]</span>
+		<div className='flex items-center w-full  py-2 rounded-md bg-[#282828] text-white/90 text-sm'>
+			<span className='w-[20px] mr-4 text-button-color'>
+				<Icon size={20} />
+			</span>
 			{children}
 		</div>
 	)
