@@ -1,6 +1,7 @@
 import ProjectCard from '@/components/ProjectCard'
 import Row from '@/components/Row'
 import '@/styles/index.css'
+import { ToastContainer } from 'react-toastify'
 
 const getData = async () => {
 	const res = await fetch(
