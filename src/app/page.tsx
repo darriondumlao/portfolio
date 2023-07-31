@@ -7,6 +7,7 @@ const getData = async () => {
 	const res = await fetch(
 		'https://api-us-west-2.hygraph.com/v2/clklz0k2z0wjq01t75jcnhnjc/master',
 		{
+			next: { revalidate: 1 },
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -39,7 +40,7 @@ const getData = async () => {
 const Home = async () => {
 	const projects = await getData()
 	return (
-		<div className='px-12'>
+		<div className=' px-12'>
 			<div className='place-content-center divide-y divide-solid divide-white/20'>
 				<div className='my-6'>
 					<Row

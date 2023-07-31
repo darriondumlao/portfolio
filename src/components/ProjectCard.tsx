@@ -4,7 +4,7 @@ import imageAsset from '/images/practice.png'
 const ProjectCard = ({ project }) => {
 	return (
 		<a target='_blank' href={project.url}>
-			<div className='group'>
+			<div className='group '>
 				<div
 					style={{
 						'--image-url': `url(${project.imageAsset ?? project.image.url})`,

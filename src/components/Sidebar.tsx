@@ -23,11 +23,14 @@ const links = [
 
 const Sidebar = () => {
 	return (
-		<div className='w-[260px] bg-[rgba(235,235,245,.03)] h-screen font-sans px-[20px] border-r border-r-white/10 py-3 sm:w-10%'>
-			<div className=' text-white/90 flex items-center  mb-6   '>
-				<Apple size={24} fill='white' />
-				<div className='text-3xl tracking-tight'>Darrion</div>
-			</div>
+		<div className='w-[260px] bg-[rgba(235,235,245,.03)] h-screen font-sans px-[20px] border-r border-r-white/10 py-3 max-lg:hidden'>
+			<Link href='/'>
+				<div className=' text-white/90 flex items-center  mb-6 cursor-pointer'>
+					<Apple size={24} fill='white' />
+					<div className='text-3xl tracking-tight'>Darrion</div>
+				</div>
+			</Link>
+
 			<SearchBar />
 			<div className='p-2 '>{/* Darrion Dumlao */}</div>
 			<div>
