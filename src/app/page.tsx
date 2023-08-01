@@ -33,7 +33,6 @@ const getData = async () => {
 		}
 	)
 	const data = await res.json()
-	console.log(data)
 	return data.data.projects
 }
 
@@ -41,7 +40,7 @@ const Home = async () => {
 	const projects = await getData()
 	return (
 		<div className=' px-12'>
-			<div className='place-content-center divide-y divide-solid divide-white/20'>
+			<div className='place-content-center divide-y divide-solid divide-white/20 md:max-lg:'>
 				<div className='my-6'>
 					<Row
 						row={projects.filter((project) => {
@@ -56,6 +55,22 @@ const Home = async () => {
 							return project.category === 'Projects'
 						})}
 						title='Projects'
+					/>
+				</div>
+				<div className='my-6 pt-2.5'>
+					<Row
+						row={projects.filter((project) => {
+							return project.category === 'Interests'
+						})}
+						title='Interests'
+					/>
+				</div>
+				<div className='my-6 pt-2.5'>
+					<Row
+						row={projects.filter((project) => {
+							return project.category === 'Source'
+						})}
+						title='Open Source'
 					/>
 				</div>
 			</div>

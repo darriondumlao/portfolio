@@ -21,12 +21,14 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body className={inter.className + ' bg-canvas'}>
-				<div className='flex  h-screen font-sans'>
+				<div className='flex h-screen font-sans'>
 					<Sidebar />
 
-					<div className='max-lg:w-full w-[calc(100vw-260px)] h-full overflow-y-scroll relative font-sans'>
+					<div className='max-lg:w-full w-[calc(100vw-260px)] h-full relative font-sans'>
 						<NavBar />
-						<div className=' pt-[150px] bg-zinc-800'>{children}</div>
+						<div className='h-full pt-[100px] bg-zinc-800 overflow-y-scroll'>
+							{children}
+						</div>
 					</div>
 
 					<ToastContainer

@@ -1,15 +1,6 @@
 'use client'
 
-import {
-	Linkedin,
-	Mail,
-	Twitter,
-	Shuffle,
-	Rewind,
-	Play,
-	FastForward,
-	Repeat,
-} from 'lucide-react'
+import { Linkedin, Mail, Twitter } from 'lucide-react'
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import Controls from './Controls'
@@ -26,19 +17,20 @@ const TopBar = () => {
 		<div className='flex items-center w-full h-full px-12 '>
 			<Controls />
 			<div className=' max-lg:w-full w-6/12 h-full flex py-1 bar'>
-				<div className='w-2/12 h-full bg-yellow-500 rounded-l-sm'>
-					{/* <Image
-						src={'/images/profile.jpg'}
-						alt='profile'
-						// fill={true}
-						// sizes='fill'
-						width={100}
-						height={100}
-					/> */}
+				<div className='w-2/12 h-full rounded-l-sm'>
+					<div className='relative w-full h-full'>
+						<Image
+							src={'/images/profile.jpg'}
+							alt='profile'
+							layout='fill'
+							objectFit='cover'
+							objectPosition='center'
+						/>
+					</div>
 				</div>
 				<div className='w-10/12 h-full bg-white/20 rounded-r-sm'>
-					<div className='text-white/80 my-1 text-center'>
-						Building cool things
+					<div className='text-white/80 my-1 text-center text-m max-xl:text-xs '>
+						"The future depends on what you do today." - Gandhi
 					</div>
 				</div>
 			</div>

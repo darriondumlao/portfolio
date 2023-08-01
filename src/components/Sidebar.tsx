@@ -18,10 +18,18 @@ const links = [
 	{ name: 'Projects', link: '/', Icon: FolderOpenDot },
 	{ name: 'Open Source', link: '/', Icon: GitFork },
 	{ name: 'Interests', link: '/', Icon: UserCircle },
-	{ name: 'Music', link: '/', Icon: Headphones },
+	// { name: 'Music', link: '/', Icon: Headphones },
 ]
 
 const Sidebar = () => {
+	const handleButtonClick = (name) => {
+		const element = document.getElementById(name)
+		console.log(element)
+		if (element) {
+			element.scrollIntoView({ behavior: 'smooth', block: 'center' })
+		}
+	}
+
 	return (
 		<div className='w-[260px] bg-[rgba(235,235,245,.03)] h-screen font-sans px-[20px] border-r border-r-white/10 py-3 max-lg:hidden'>
 			<Link href='/'>
@@ -35,11 +43,17 @@ const Sidebar = () => {
 			<div className='p-2 '>{/* Darrion Dumlao */}</div>
 			<div>
 				{links.map((link) => (
-					<Link key={link.name} href={link.link}>
-						<SidebarButton key={link.name} Icon={link.Icon}>
-							{link.name}
-						</SidebarButton>
-					</Link>
+					// <Link key={link.name} href={link.link}>
+					<SidebarButton
+						key={link.name}
+						Icon={link.Icon}
+						onClick={(e) => {
+							e.preventDefault()
+							handleButtonClick(link.name)
+						}}>
+						{link.name}
+					</SidebarButton>
+					// </Link>
 				))}
 			</div>
 		</div>
